@@ -1,14 +1,18 @@
 package org.sda.services;
 
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.sda.dao.LocationDAO;
 import org.sda.models.Location;
 
 import java.util.List;
 import java.util.UUID;
 
+import static org.sda.util.HibernateUtil.sessionFactory;
+
 public class LocationServicesImpl implements LocationServices {
 
-    private final LocationDAO locationDao;
+    private LocationDAO locationDao;
 
     public LocationServicesImpl(LocationDAO locationDao) {
         this.locationDao = locationDao;
@@ -16,7 +20,21 @@ public class LocationServicesImpl implements LocationServices {
 
     @Override
     public void addLocation(Location location) {
-        locationDao.save(location);
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+
+        try {
+            tx = session.beginTransaction();
+            session.save(location);
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            throw e;
+        } finally {
+            session.close();
+        }
     }
 
     @Override
