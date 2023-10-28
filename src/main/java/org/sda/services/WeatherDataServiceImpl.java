@@ -5,12 +5,11 @@ import org.hibernate.Transaction;
 import org.sda.dao.WeatherDataDAO;
 import org.sda.models.Location;
 import org.sda.models.WeatherData;
+import static org.sda.util.HibernateUtil.sessionFactory;
 
 import java.util.List;
 
-import static org.sda.util.HibernateUtil.sessionFactory;
-
-public class WeatherdataServiceImpl implements WeatherdataService {
+public class WeatherDataServiceImpl implements WeatherDataService {
 
     private WeatherDataDAO weatherDataDAO;
     @Override

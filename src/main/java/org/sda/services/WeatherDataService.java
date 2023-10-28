@@ -5,7 +5,7 @@ import org.sda.models.WeatherData;
 
 import java.util.List;
 
-public interface WeatherdataService {
+public interface WeatherDataService {
 
     void addWeatherData(WeatherData weatherData);
     void updateWeatherData(WeatherData weatherData);
