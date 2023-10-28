@@ -21,7 +21,7 @@ public class LocationDaoImpl implements LocationDAO {
     @Override
     public void save(Location location) {
         Session session = sessionFactory.getCurrentSession();
-        session.save(location;
+        session.save(location);
 
         System.out.println("Location Saved!");
     }
@@ -38,13 +38,13 @@ public class LocationDaoImpl implements LocationDAO {
     public Location findById(UUID id) {
         Session session = sessionFactory.getCurrentSession();
 
-        return session.get(Location.class,id);
+        return session.get(Location.class, id);
     }
 
     @Override
     public List<Location> findAll() {
         try (Session session = sessionFactory.openSession()) {
-            CriteriaBuilder builder = (CriteriaBuilder) session.getCriteriaBuilder();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
             CriteriaQuery<Location> query = builder.createQuery(Location.class);
             Root<Location> root = query.from(Location.class);
             query.select(root);
