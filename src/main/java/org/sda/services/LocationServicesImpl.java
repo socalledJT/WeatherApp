@@ -8,7 +8,7 @@ import java.util.UUID;
 
 public class LocationServicesImpl implements LocationServices {
 
-    private LocationDAO locationDao;
+    private final LocationDAO locationDao;
 
     public LocationServicesImpl(LocationDAO locationDao) {
         this.locationDao = locationDao;

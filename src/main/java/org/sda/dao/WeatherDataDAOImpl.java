@@ -14,7 +14,7 @@ import java.util.UUID;
 
 public class WeatherDataDAOImpl implements WeatherDataDAO {
 
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
     public WeatherDataDAOImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
