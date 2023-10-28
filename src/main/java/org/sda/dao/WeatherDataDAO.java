@@ -10,7 +10,7 @@ public interface WeatherDataDAO {
 
     void save(WeatherData weatherData);
     void update(WeatherData weatherData);
-    WeatherData findById(UUID id);
+    WeatherData findById(Long id);
     List<WeatherData> findByLocation(Location location);
     void delete(WeatherData weatherData);
 }
