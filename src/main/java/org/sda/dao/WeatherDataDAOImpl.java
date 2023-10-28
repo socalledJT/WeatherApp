@@ -35,7 +35,7 @@ public class WeatherDataDAOImpl implements WeatherDataDAO {
     }
 
     @Override
-    public WeatherData findById(UUID id) {
+    public WeatherData findById(Long id) {
         Session session = sessionFactory.getCurrentSession();
         return session.get(WeatherData.class, id);
     }
