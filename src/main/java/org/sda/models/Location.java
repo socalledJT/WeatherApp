@@ -29,6 +29,9 @@ public class Location {
         this.latitude = latitude;
     }
 
+    public Location(String region, String country, Double longitude, Double latitude) {
+    }
+
     public UUID getId() {
         return id;
     }
