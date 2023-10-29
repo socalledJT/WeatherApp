@@ -12,6 +12,11 @@ import java.util.List;
 public class WeatherDataServiceImpl implements WeatherDataService {
 
     private WeatherDataDAO weatherDataDAO;
+
+    public WeatherDataServiceImpl(WeatherDataDAO weatherDataDao) {
+        this.weatherDataDAO = weatherDataDao;
+    }
+
     @Override
     public void addWeatherData(WeatherData weatherData) {
         Session session = sessionFactory.openSession();
