@@ -1,12 +1,17 @@
 package org.sda;
 
-import org.hibernate.Session;
+import org.sda.consoleApp.WeatherDataGui;
 
-import org.hibernate.SessionFactory;
-import org.sda.util.HibernateUtil;
+
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                WeatherDataGui app = new WeatherDataGui();
+                app.display();
+            }
+        });
     }
 }
