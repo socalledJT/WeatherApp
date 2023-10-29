@@ -1,0 +1,9 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(óò£¿øÿÿÿÿ8é­¯Õ·1
+G
+java:S1068
+"*Remove this unused "jFrame" private field.(Íèþê8„®¯Õ·1
+Q
+java:S1068"4Remove this unused "locationServices" private field.(º¥õ”8…®¯Õ·1
+S
+java:S1068"6Remove this unused "weatherDataService" private field.(”¬ôå8…®¯Õ·1
